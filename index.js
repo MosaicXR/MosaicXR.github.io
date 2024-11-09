@@ -4,7 +4,6 @@
 const imageInput = document.getElementById('imageInput');
 const imagePreviewContainer = document.getElementById('imagePreviewContainer');
 const uploadButton = document.getElementById('uploadButton');
-const baseUrlInput = document.getElementById('baseUrl');
 const resultContainer = document.getElementById('result');
 
 // Handle image preview
@@ -29,15 +28,9 @@ imageInput.addEventListener('change', function(event) {
 // Handle image upload
 uploadButton.addEventListener('click', function() {
     const file = imageInput.files[0];
-    const baseUrl = baseUrlInput.value.trim();  // Get the base URL from the input field
 
     if (!file) {
         alert('Please select an image first!');
-        return;
-    }
-
-    if (!baseUrl) {
-        alert('Please enter the base URL!');
         return;
     }
 
@@ -45,8 +38,11 @@ uploadButton.addEventListener('click', function() {
     reader.onloadend = function () {
         const base64String = reader.result.split(',')[1]; // Remove the "data:image/png;base64," prefix if it's there
 
-        // Send the base64 string to the user-specified URL
-        fetch(`${baseUrl}/images/upload`, {  // Use the entered base URL
+        // The fixed base URL for uploading the image
+        const uploadUrl = 'https://kite-prompt-koi.ngrok-free.app/images/upload';
+
+        // Send the base64 string to the fixed URL
+        fetch(uploadUrl, {  // Use the fixed URL directly
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

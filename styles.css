@@ -26,20 +26,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 14px;
-}
-
-#baseUrl {
-    padding: 10px;
-    font-size: 16px;
-    margin-bottom: 20px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
 #imageInput {
     padding: 10px;
     font-size: 16px;
