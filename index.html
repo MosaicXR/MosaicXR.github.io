@@ -10,17 +10,25 @@
     <div class="container">
         <h1>Upload an Image</h1>
 
-        <!-- File input for selecting an image -->
-        <input type="file" id="imageInput" accept="image/*">
+        <!-- Drag-and-drop or click to upload area -->
+        <div id="uploadArea" class="upload-area">
+            <p>Drag & Drop your image here or click to select</p>
+            <input type="file" id="imageInput" accept="image/*" style="display: none;">
+        </div>
 
         <!-- Preview of the selected image -->
         <div id="imagePreviewContainer"></div>
 
         <!-- Button to upload the image -->
-        <button id="uploadButton">Upload Image</button>
+        <button id="uploadButton" class="upload-btn">Upload Image</button>
 
         <!-- Result display after upload -->
         <div id="result"></div>
+    </div>
+
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>Uploading...</p>
     </div>
 
     <script src="index.js"></script>
