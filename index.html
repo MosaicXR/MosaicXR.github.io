@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Image Upload</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    My name is niyi this is mosaic thingie
+    <div class="container">
+        <h1>Upload an Image</h1>
+
+        <!-- Input for base URL -->
+        <label for="baseUrl">Base URL for Image Upload:</label>
+        <input type="text" id="baseUrl" placeholder="Enter the base URL (e.g., http://localhost:8000)" required>
+
+        <!-- File input for selecting an image -->
+        <input type="file" id="imageInput" accept="image/*">
+
+        <!-- Preview of the selected image -->
+        <div id="imagePreviewContainer"></div>
+
+        <!-- Button to upload the image -->
+        <button id="uploadButton">Upload Image</button>
+
+        <!-- Result display after upload -->
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
