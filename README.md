@@ -1,2 +1,7 @@
 # MosaicXR.github.io
-Hello my name is bolaji and this is the edited version
+
+### PACKAGES USED: N/A
+
+### ASSETS USED: CHATGPT GENERATED FAVICON
+
+### AI TOOLS USED: CHAT GPT
