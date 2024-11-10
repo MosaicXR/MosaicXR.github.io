@@ -5,8 +5,9 @@
     box-sizing: border-box;
 }
 
+/* Body font and background */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Updated to Roboto for a clean and modern look */
     background: linear-gradient(to right, #6a0dad, #a855f7);
     color: #fff;
     min-height: 100vh;
@@ -31,8 +32,9 @@ body {
 /* Heading styles */
 h1 {
     margin-bottom: 20px;
-    font-size: 2rem;
+    font-size: 2.5rem; /* Increased font size for emphasis */
     color: #4c1d95;
+    font-family: 'Poppins', sans-serif; /* Poppins font for headings */
 }
 
 /* Upload area - drag and drop + click */
@@ -49,6 +51,7 @@ h1 {
     margin: 0;
     color: #6c6c6c;
     font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif; /* Roboto font for text */
 }
 
 .upload-area:hover {
@@ -61,7 +64,7 @@ h1 {
 }
 
 /* Button styling */
-.upload-btn {
+.upload-btn, .clear-btn {
     background-color: #4c1d95;
     color: white;
     border: none;
@@ -73,35 +76,101 @@ h1 {
     margin-top: 20px;
 }
 
-.upload-btn:hover {
+.upload-btn:hover, .clear-btn:hover {
     background-color: #9c4aff;
     transform: scale(1.05);
 }
 
-.upload-btn:focus {
+.upload-btn:focus, .clear-btn:focus {
+    outline: none;
+}
+
+/* Clear All Button Styling */
+.clear-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.clear-btn:hover {
+    background-color: #ff2d2d;
+    transform: scale(1.05);
+}
+
+.clear-btn:focus {
     outline: none;
 }
 
 /* Image preview container */
 #imagePreviewContainer {
     display: flex;
+    flex-wrap: wrap; /* Allow multiple images in rows */
+    gap: 10px; /* Space between images */
     justify-content: center;
-    align-items: center;
     margin-bottom: 20px;
 }
 
 #imagePreviewContainer img {
-    max-width: 100%;
-    max-height: 300px; /* Limit image size */
-    border-radius: 8px;
+    width: 90px;  /* Set fixed size for images */
+    height: 90px; /* Set fixed size for images */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
+    transition: transform 0.3s ease, opacity 0.5s ease, filter 0.3s ease; /* Transition for opacity, transform, and shine */
+}
+
+/* Hover effect for the images - Shine effect */
+#imagePreviewContainer img:hover {
+    transform: scale(1.1); /* Zoom effect when hovering over the image */
+    filter: brightness(1.2); /* Apply shine effect */
+}
+
+/* Fade out effect and scatter effect */
+.fade-out {
+    opacity: 0;
+    transform: scale(0.8) translateX(10px) translateY(10px); /* Scale down and move slightly */
+}
+
+.fade-out.scatter {
+    animation: scatterEffect 0.5s forwards; /* Apply scatter effect when images fade out */
+}
+
+@keyframes scatterEffect {
+    0% {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(20px) translateY(-20px); /* Move the image randomly */
+    }
 }
 
 /* Result text after upload */
 #result {
     margin-top: 20px;
     font-size: 1.1rem;
+    font-family: 'Roboto', sans-serif; /* Default font for the result message */
+}
+
+/* Success message styling */
+#result.success {
+    font-family: 'Poppins', sans-serif; /* Poppins font for success */
+    font-weight: 600; /* Bold weight for emphasis */
+    color: #28a745; /* Green color for success */
+}
+
+/* Error message styling */
+#result.error {
+    font-family: 'Roboto', sans-serif; /* Roboto font for error */
+    font-weight: 500; /* Medium weight for readability */
+    color: #dc3545; /* Red color for error */
 }
 
 /* Loading overlay */
@@ -134,3 +203,6 @@ h1 {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap');
