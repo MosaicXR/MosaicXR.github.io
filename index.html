@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MosaicXR Gallery Uploader</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="images/favicon.webp" type="image/x-icon" />
+  </head>
+  <body>
     <div class="container">
-        <h1>Upload an Image</h1>
+      <h1>Upload an Image</h1>
 
-        <!-- Drag-and-drop or click to upload area -->
-        <div id="uploadArea" class="upload-area">
-            <p>Drag & Drop your images here or click to select</p>
-            <input type="file" id="imageInput" accept="image/*" multiple style="display: none;">
-        </div>
+      <!-- Drag-and-drop or click to upload area -->
+      <div id="uploadArea" class="upload-area">
+        <p>Drag & Drop your images here or click to select</p>
+        <input
+          type="file"
+          id="imageInput"
+          accept="image/*"
+          multiple
+          style="display: none"
+        />
+      </div>
 
-        <!-- Preview of the selected images -->
-        <div id="imagePreviewContainer"></div>
+      <!-- Preview of the selected images -->
+      <div id="imagePreviewContainer"></div>
 
-        <!-- Button to upload the images -->
-        <button id="uploadButton" class="upload-btn">Upload Images</button>
+      <!-- Button to upload the images -->
+      <button id="uploadButton" class="upload-btn">Upload Images</button>
 
-        <!-- Clear button to clear the selected images -->
-        <button id="clearButton" class="clear-btn">Clear All Images</button> <!-- Updated button text -->
+      <!-- Clear button to clear the selected images -->
+      <button id="clearButton" class="clear-btn">Clear All Images</button>
+      <!-- Updated button text -->
 
-        <!-- Result display after upload -->
-        <div id="result"></div>
+      <!-- Result display after upload -->
+      <div id="result"></div>
     </div>
 
     <div id="loadingOverlay" class="loading-overlay">
-        <div class="loading-spinner"></div>
-        <p>Uploading...</p>
+      <div class="loading-spinner"></div>
+      <p>Uploading...</p>
     </div>
 
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
