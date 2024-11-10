@@ -151,6 +151,7 @@ h1 {
   cursor: pointer;
   user-select: none;
   font-family: "Roboto", sans-serif;
+  position: relative;
 }
 
 /* Hide the default checkbox */
@@ -172,6 +173,8 @@ h1 {
   background-color: white;
   margin-right: 8px;
   transition: background-color 0.2s, border-color 0.2s;
+  position: relative;
+  box-sizing: border-box;
 }
 
 /* Style the checkmark when checked */
@@ -180,17 +183,18 @@ h1 {
   border-color: #4c1d95;
 }
 
-/* Add a tick mark when checked */
+/* Add a tick mark when checked, centered properly */
 .custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
   content: "";
   position: absolute;
-  left: 5px;
-  top: 1px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
   width: 5px;
   height: 10px;
   border: solid white;
   border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
+  box-sizing: border-box;
 }
 
 /* Fade out effect and scatter effect */
