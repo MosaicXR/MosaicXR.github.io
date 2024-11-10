@@ -1,208 +1,274 @@
 /* General reset and body styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Body font and background */
 body {
-    font-family: 'Roboto', sans-serif; /* Updated to Roboto for a clean and modern look */
-    background: linear-gradient(to right, #6a0dad, #a855f7);
-    color: #fff;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
+  font-family: "Roboto", sans-serif; /* Updated to Roboto for a clean and modern look */
+  background: linear-gradient(to right, #6a0dad, #a855f7);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
 
 /* Container for the entire content */
 .container {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
-    position: relative;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  position: relative;
 }
 
 /* Heading styles */
 h1 {
-    margin-bottom: 20px;
-    font-size: 2.5rem; /* Increased font size for emphasis */
-    color: #4c1d95;
-    font-family: 'Poppins', sans-serif; /* Poppins font for headings */
+  margin-bottom: 20px;
+  font-size: 2.5rem; /* Increased font size for emphasis */
+  color: #4c1d95;
+  font-family: "Poppins", sans-serif; /* Poppins font for headings */
 }
 
 /* Upload area - drag and drop + click */
 .upload-area {
-    border: 2px dashed #4c1d95;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+  border: 2px dashed #4c1d95;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .upload-area p {
-    margin: 0;
-    color: #6c6c6c;
-    font-size: 1.2rem;
-    font-family: 'Roboto', sans-serif; /* Roboto font for text */
+  margin: 0;
+  color: #6c6c6c;
+  font-size: 1.2rem;
+  font-family: "Roboto", sans-serif; /* Roboto font for text */
 }
 
 .upload-area:hover {
-    background-color: rgba(76, 29, 149, 0.1);
-    border-color: #9c4aff;
+  background-color: rgba(76, 29, 149, 0.1);
+  border-color: #9c4aff;
 }
 
 .upload-area.drag-over {
-    background-color: rgba(76, 29, 149, 0.2);
+  background-color: rgba(76, 29, 149, 0.2);
 }
 
 /* Button styling */
-.upload-btn, .clear-btn {
-    background-color: #4c1d95;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 20px;
+.upload-btn,
+.clear-btn {
+  background-color: #4c1d95;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
 }
 
-.upload-btn:hover, .clear-btn:hover {
-    background-color: #9c4aff;
-    transform: scale(1.05);
+.upload-btn:hover,
+.clear-btn:hover {
+  background-color: #9c4aff;
+  transform: scale(1.05);
 }
 
-.upload-btn:focus, .clear-btn:focus {
-    outline: none;
+.upload-btn:focus,
+.clear-btn:focus {
+  outline: none;
 }
 
 /* Clear All Button Styling */
 .clear-btn {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 20px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
 }
 
 .clear-btn:hover {
-    background-color: #ff2d2d;
-    transform: scale(1.05);
+  background-color: #ff2d2d;
+  transform: scale(1.05);
 }
 
 .clear-btn:focus {
-    outline: none;
+  outline: none;
 }
 
 /* Image preview container */
 #imagePreviewContainer {
-    display: flex;
-    flex-wrap: wrap; /* Allow multiple images in rows */
-    gap: 10px; /* Space between images */
-    justify-content: center;
-    margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Allow multiple images in rows */
+  gap: 10px; /* Space between images */
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 #imagePreviewContainer img {
-    width: 90px;  /* Set fixed size for images */
-    height: 90px; /* Set fixed size for images */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, opacity 0.5s ease, filter 0.3s ease; /* Transition for opacity, transform, and shine */
+  width: 90px; /* Set fixed size for images */
+  height: 90px; /* Set fixed size for images */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, opacity 0.5s ease, filter 0.3s ease; /* Transition for opacity, transform, and shine */
 }
 
 /* Hover effect for the images - Shine effect */
 #imagePreviewContainer img:hover {
-    transform: scale(1.1); /* Zoom effect when hovering over the image */
-    filter: brightness(1.2); /* Apply shine effect */
+  transform: scale(1.1); /* Zoom effect when hovering over the image */
+  filter: brightness(1.2); /* Apply shine effect */
+}
+
+/* Custom checkbox container */
+.option {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  color: #4c1d95;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Hide the default checkbox */
+.custom-checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkmark */
+.custom-checkbox .checkmark {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #4c1d95;
+  border-radius: 4px;
+  background-color: white;
+  margin-right: 8px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+/* Style the checkmark when checked */
+.custom-checkbox input[type="checkbox"]:checked + .checkmark {
+  background-color: #4c1d95;
+  border-color: #4c1d95;
+}
+
+/* Add a tick mark when checked */
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
 /* Fade out effect and scatter effect */
 .fade-out {
-    opacity: 0;
-    transform: scale(0.8) translateX(10px) translateY(10px); /* Scale down and move slightly */
+  opacity: 0;
+  transform: scale(0.8) translateX(10px) translateY(10px); /* Scale down and move slightly */
 }
 
 .fade-out.scatter {
-    animation: scatterEffect 0.5s forwards; /* Apply scatter effect when images fade out */
+  animation: scatterEffect 0.5s forwards; /* Apply scatter effect when images fade out */
 }
 
 @keyframes scatterEffect {
-    0% {
-        opacity: 1;
-        transform: translateX(0) translateY(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translateX(20px) translateY(-20px); /* Move the image randomly */
-    }
+  0% {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(20px) translateY(-20px); /* Move the image randomly */
+  }
 }
 
 /* Result text after upload */
 #result {
-    margin-top: 20px;
-    font-size: 1.1rem;
-    font-family: 'Roboto', sans-serif; /* Default font for the result message */
+  margin-top: 20px;
+  font-size: 1.1rem;
+  font-family: "Roboto", sans-serif; /* Default font for the result message */
 }
 
 /* Success message styling */
 #result.success {
-    font-family: 'Poppins', sans-serif; /* Poppins font for success */
-    font-weight: 600; /* Bold weight for emphasis */
-    color: #28a745; /* Green color for success */
+  font-family: "Poppins", sans-serif; /* Poppins font for success */
+  font-weight: 600; /* Bold weight for emphasis */
+  color: #28a745; /* Green color for success */
 }
 
 /* Error message styling */
 #result.error {
-    font-family: 'Roboto', sans-serif; /* Roboto font for error */
-    font-weight: 500; /* Medium weight for readability */
-    color: #dc3545; /* Red color for error */
+  font-family: "Roboto", sans-serif; /* Roboto font for error */
+  font-weight: 500; /* Medium weight for readability */
+  color: #dc3545; /* Red color for error */
 }
 
 /* Loading overlay */
 .loading-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 9999;
-    color: white;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-size: 1.5rem;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.5rem;
 }
 
 .loading-spinner {
-    border: 8px solid rgba(255, 255, 255, 0.3);
-    border-top: 8px solid #fff;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
+  border: 8px solid rgba(255, 255, 255, 0.3);
+  border-top: 8px solid #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap");
